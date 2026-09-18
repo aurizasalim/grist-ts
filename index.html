@@ -1,10 +1,32 @@
+<!--
 <html>
 <head>
   <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
-  <script src="./script.js"></script>
+  <script src="./script.js" defer></script>
 </head>
 <body>
   <div id="title"></div>
-  <div id="version">v-4</div>
+  <div id="version">v-8</div>
+  test pada index
 </body>
 </html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>onRecord</title>
+    <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+  </head>
+  <body>
+    <pre id="readout">Waiting for data...</pre>
+    <script>
+      grist.ready();
+      grist.onRecord(function(record) {
+        document.getElementById('readout').innerHTML = JSON.stringify(record, null, 2);
+      });
+    </script>
+  </body>
+</html>
+
